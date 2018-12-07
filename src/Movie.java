@@ -19,7 +19,7 @@ public class Movie {
     public String getTitle() {
         return title;
     }
-    private void setPriceCode(int priceCode) {
+    void setPriceCode(int priceCode) {
     	switch (priceCode) {
         case CHILDREN:
             price = new ChildrensPrice();
@@ -35,7 +35,7 @@ public class Movie {
     }
     }
    
-    private int getPriceCode() {
+    int getPriceCode() {
         return price.getPriceCode();
 
     }
