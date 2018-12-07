@@ -3,7 +3,7 @@ import static org.junit.Assert.assertEquals;
 
 public class TestJUnit {
 	// Initialize variables
-	private final Movie movie = new Movie("Avengers", Movie.REGULAR);
+	private final Movie movie = new Movie("Title", Movie.REGULAR);
 	private final Rental rental = new Rental(movie, 3);
 	private final Customer customer = new Customer("Arnold");
 
@@ -28,7 +28,7 @@ public class TestJUnit {
 	@Test
 	public void testGetTitle() {
 		String title = movie.getTitle();
-		assertEquals(title, "Avengers");
+		assertEquals(title, "Title");
 	}
 
 	/*** Rental ***/
@@ -62,8 +62,8 @@ public class TestJUnit {
 	public void testStatement() {
 		// Expected printout
 		String line1 = "Rental record for Arnold";
-		String line2 = "transformers";
-		String line3 = "bled";
+		String line2 = "Avengers";
+		String line3 = "blade";
 		String line4 = "Amount owed is 3.5";
 		String line5 = "You earned 2 frequent renter points";
 
@@ -71,10 +71,10 @@ public class TestJUnit {
 				+ "\n" + line5;
 
 		// Setup a test case involving movies and rentals
-		Movie snow = new Movie("transformers", Movie.CHILDREN);
+		Movie snow = new Movie("Avengers", Movie.CHILDREN);
 		Rental snowRental = new Rental(snow, 3);
 
-		Movie gone = new Movie("bled", Movie.REGULAR);
+		Movie gone = new Movie("blade", Movie.REGULAR);
 		Rental goneRental = new Rental(gone, 1);
 
 		customer.addRental(snowRental);
